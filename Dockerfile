@@ -1,10 +1,10 @@
-FROM python:3.10.8-slim
+FROM python:3.10.0
 
 WORKDIR /user/app
 COPY requirements-deploy.txt ./requirements.txt
 RUN pip install --no-cache-dir -r ./requirements.txt
 
-COPY data/images ./images/
+COPY data/images .data/images/
 COPY models/ ./models/
 COPY src/request_sender.py ./src/request_sender.py
 COPY ["predict.py", "kitchenware_app.py"]
