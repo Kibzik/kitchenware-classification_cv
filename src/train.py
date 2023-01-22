@@ -87,7 +87,7 @@ def train_processing(train_config_path: str = "../configs/train_config.yaml"):
     )
 
     checkpoint = keras.callbacks.ModelCheckpoint(
-        '../models/kitchenware_model.h5',
+        '../prediction_app/models/kitchenware_model.h5',
         save_best_only=True,
         monitor='val_accuracy',
         mode='max'

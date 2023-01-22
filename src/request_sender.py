@@ -27,7 +27,7 @@ def send_requests(host: str = "localhost:5050", dataset_path=None) -> None:
 
 def streamlit_request(img="data/images/0000.jpg"):
     url = 'http://localhost:5050/classify_img'
-    # url = 'http://supermac7.pythonanywhere.com/classify_img'
+    # url = 'http://Kibzik.pythonanywhere.com/classify_img'
     response = requests.post(url, json={"img_name": img}).json()
     print(f'Predictions: {response}')
     return response

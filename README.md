@@ -70,27 +70,23 @@ gunicorn --bind=0.0.0.0:5050 predict:app
 
 ### Containerization
 Be sure that you have already installed the Docker, and it's running on your machine now.
+
+I PART
 1. Open the terminal and choose the project directory.
-2. Build docker image from [`Dockerfile`](Dockerfile) using `docker build --no-cache -t classify-kitchenware .`.
+2. Build docker image from [`Dockerfile`](Dockerfile) using `docker build --no-cache -t kitchenware_streamlit .`.
 With `-t` parameter we're specifying the tag name of our docker image. 
-3. Now use `docker run -it -p 8501:8501 classify-kitchenware` command to launch the docker container with your app. 
+3. Now use `docker run -it -p 8501:8501 kitchenware_streamlit` command to launch the docker container with your app. 
 Parameter `-p` is used to map the docker container port to our real machine port.
 
-### Deploying to Cloud(Heroku docker deployment)
-Follow this steps to deploy the app to Heroku
-1. Register on [Heroku](https://signup.heroku.com/) and install Heroku CLI.
-2. Open the terminal in project of the app
-3. Terminal: rung the `heroku login` command to log in to Heroku.
-4. Terminal: login to Heroku container registry using `heroku container:login` command.
-5. Terminal: create a new app in Heroku with the following command `heroku create classify-kitchenware-docker`.
-6. Make small changes in [`Dockerfile`](Dockerfile): uncomment the last line and comment out the line above. 
-Heroku automatically assigns porn number from the dynamic pool. So, there is no need to specify it manually.
-7. Terminal: run the `heroku container:push web -a classify-kitchenware-docker` command to push docker image to Heroku.
-8. Terminal: release the container using the command `heroku container:release web -a classify-kitchenware-docker`.
-9. Launch your app by clicking on generated URL in 5th step. In our case the link - [Heroku app](https://classify-kitchenware-docker.herokuapp.com/).
-If we have successfully deployed the app, the link opens without problems.
+II PART
+1. Open another terminal and choose the prediction_app directory in the project directory.
+2. Build docker image from [`Dockerfile`](Dockerfile) using `docker build --no-cache -t classify-kitchenware .`.
+With `-t` parameter we're specifying the tag name of our docker image. 
+3. Now use `docker run -it -p 5050:5050 classify-kitchenware` command to launch the docker container with your app. 
+Parameter `-p` is used to map the docker container port to our real machine port.
 
 Now we can move on to the next step - service testing.
+
 ### Service testing
 * [prediction endpoint](https://parking-slots-docker.herokuapp.com/predict) serves for the model scoring.
 
@@ -106,6 +102,5 @@ To test the service that is **running locally** with Streamlit visualisation
 streamlit run kitchenware_app.py
 ```
 
-To test our **Streamlit deployment**, we should type:
-- Set host parameter in 27 line to 'classify-kitchenware-docker.herokuapp.com' and run [request sender](src/request_sender.py)
-along with an external interface for sharing
+To test our **Streamlit deployment**, we should:
+Run from [Streamlit app](https://kibzik-kitchenware-classification-cv-kitchenware-app-hh5pb9.streamlit.app/).
