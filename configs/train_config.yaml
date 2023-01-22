@@ -1,0 +1,8 @@
+input_data_path: "../data/train.csv"
+output_model_path: "../models/kitchenware_model.h5"
+splitting_params:
+  test_size: 0.2
+  random_state: 1
+train_params:
+  learning_rate: 0.001
+  input_size: 299
