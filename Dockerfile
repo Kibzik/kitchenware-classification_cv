@@ -9,5 +9,5 @@ COPY models/ ./models/
 COPY src/request_sender.py ./src/request_sender.py
 COPY ["predict.py", "kitchenware_app.py"]
 
-EXPOSE 8502
-CMD ["streamlit", "run", "kitchenware_app.py","--server.port=8502", "--server.address=0.0.0.0"]
+EXPOSE 8501
+CMD ["streamlit", "run", "kitchenware_app.py","--server.port=8501", "--server.address=0.0.0.0"]
