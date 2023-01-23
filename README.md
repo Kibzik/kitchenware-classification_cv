@@ -8,10 +8,11 @@ kitchen items with machine learning engineering practices.
    * [About the Data](#about-the-data)
  * [Tech Stack and concepts](#tech-stack-and-concepts)
  * [Setup](#setup)
+   * [Download data](#download-data)
    * [Virtual Environment](#virtual-environment)
    * [Run Service Locally](#run-service-locally)
-   * [Docker Container](#docker-container)
-   * [Deploying to Cloud](#deploying-to-cloudheroku-docker-deployment)
+   * [Containerization](#containerization)
+   * [Service testing](#service-testing)
 
 ## Problem description
 The problem we will study was introduced by [DataTalksCLub](https://datatalks.club/) in Kaggle platform [Kaggle Competition](https://www.kaggle.com/competitions/kitchenware-classification/).
