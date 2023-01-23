@@ -7,7 +7,7 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.applications.xception import Xception
 from tensorflow.keras.applications.xception import preprocess_input
 
-from config_reader import read_config, parse_data_config, parse_train_config
+from config_reader import read_config, parse_train_config
 
 logger = logging.getLogger(__name__)
 handler = logging.StreamHandler(sys.stdout)
@@ -87,7 +87,7 @@ def train_processing(train_config_path: str = "../configs/train_config.yaml"):
     )
 
     checkpoint = keras.callbacks.ModelCheckpoint(
-        '../prediction_app/models/kitchenware_model.h5',
+        '../models/kitchenware_model.h5',
         save_best_only=True,
         monitor='val_accuracy',
         mode='max'

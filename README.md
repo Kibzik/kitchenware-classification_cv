@@ -70,26 +70,13 @@ gunicorn --bind=0.0.0.0:5050 predict:app
 
 ### Containerization
 Be sure that you have already installed the Docker, and it's running on your machine now.
-
-I PART
 1. Open the terminal and choose the project directory.
 2. Build docker image from [`Dockerfile`](Dockerfile) using `docker build --no-cache -t kitchenware_streamlit .`.
 With `-t` parameter we're specifying the tag name of our docker image. 
 3. Now use `docker run -it -p 8501:8501 kitchenware_streamlit` command to launch the docker container with your app. 
 Parameter `-p` is used to map the docker container port to our real machine port.
 
-II PART
-1. Open another terminal and choose the prediction_app directory in the project directory.
-2. Build docker image from [`Dockerfile`](Dockerfile) using `docker build --no-cache -t classify-kitchenware .`.
-With `-t` parameter we're specifying the tag name of our docker image. 
-3. Now use `docker run -it -p 5050:5050 classify-kitchenware` command to launch the docker container with your app. 
-Parameter `-p` is used to map the docker container port to our real machine port.
-
-Now we can move on to the next step - service testing.
-
 ### Service testing
-* [prediction endpoint](https://parking-slots-docker.herokuapp.com/predict) serves for the model scoring.
-
 To test the prediction endpoint we can use handmade script  [request sender](src/request_sender.py) that takes data from a specified directory and sends requests to the service.
 In case of using a script, just follow the rule:
 
